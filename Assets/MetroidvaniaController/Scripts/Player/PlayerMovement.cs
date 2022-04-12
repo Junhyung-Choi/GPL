@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-		if (Input.GetKeyDown("joystick button 1") || Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown("joystick button 1") || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
 		{
 			jump = true;
 		}
