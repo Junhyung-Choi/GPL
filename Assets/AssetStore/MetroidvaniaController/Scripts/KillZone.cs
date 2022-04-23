@@ -16,8 +16,4 @@ public class KillZone : MonoBehaviour
             Destroy(col.gameObject);
         }
     }
-    private void Start() {
-        Debug.Log("ceil" + Mathf.Ceil(-2.3f));
-        Debug.Log("floor" + Mathf.Floor(-1.75f));
-    }
 }

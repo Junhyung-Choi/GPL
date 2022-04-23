@@ -22,12 +22,12 @@ public class PlayerMovement : MonoBehaviour {
 
 		animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-		if (Input.GetKeyDown("joystick button 1") || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
+		if (Input.GetKeyDown(KeyCode.Z))
 		{
 			jump = true;
 		}
 
-		if (Input.GetKeyDown("joystick button 2") || Input.GetKeyDown(KeyCode.LeftShift))
+		if (Input.GetKeyDown(KeyCode.C))
 		{
 			dash = true;
 		}
