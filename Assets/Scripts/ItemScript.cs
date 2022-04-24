@@ -19,6 +19,9 @@ public class ItemScript : MonoBehaviour
             case "FastChick":
                 player.GetComponent<PlayerMovement>().runSpeed = 80f;
                 break;
+            default:
+                PlayerManager.SetTrueRelicItem(itemName);
+                break;
         }
     }
 }
