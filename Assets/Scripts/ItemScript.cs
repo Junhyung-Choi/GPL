@@ -9,4 +9,6 @@ public class ItemScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         // userItem[itemName] = true;
     }
+
+
 }
