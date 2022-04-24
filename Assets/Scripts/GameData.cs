@@ -12,7 +12,7 @@ public class GameData
     public int defenselevel = 0;
     public Dictionary<string, int> defensetree = {{"health", 0}, {"armor", 0}, {"healrate", 0}};
     public int utilitylevel = 0;
-    public Dictionary<string, int> utilitylevel = {{"reward", 0}, {"dodge", 0}, {"critical", 0}};
+    public Dictionary<string, int> utilitytree = {{"reward", 0}, {"dodge", 0}, {"critical", 0}};
     public int gunshoplevel = 0;
     public int relicshoplevel = 0;
 }
