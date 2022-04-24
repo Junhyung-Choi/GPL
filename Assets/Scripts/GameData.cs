@@ -9,5 +9,5 @@ public class GameData
     public int herolevel = 0;
     public int gunshoplevel = 0;
     public int relicshoplevel = 0;
-
+    
 }
