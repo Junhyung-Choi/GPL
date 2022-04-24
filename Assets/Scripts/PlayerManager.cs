@@ -7,57 +7,95 @@ public class PlayerManager : MonoBehaviour
     public int hp;
     public int mp;
     public int gold;
+    static Gun _gun;
     static Dictionary<string, bool> _gunDictionary;
     static Dictionary<string, bool> _bulletDictionary;
-    static Dictionary<string, bool> _relicItemDictionary;
+    static Dictionary<string, bool> _relicDictionary;
+    public static PlayerManager instance;
+    public GameObject bulletPrefab;
+    private void Awake() {
+        instance = this;
+        _gunDictionary = new Dictionary<string, bool>{
+            {"handgun", true},
+            {"machinegun", false},
+            {"shotgun", false},
+        };
+        _bulletDictionary = new Dictionary<string, bool>{
+            {"nor_bullet", true},
+            {"ap_bullet", false},
+            {"ex_bullet", false},
+        };
+        _relicDictionary = new Dictionary<string, bool>{
+            {"magneticfiled", false},
+            {"nanobot", false},
+            {"steelman", false},
+            {"destroy", false}
+        };
+    }
 
+    private void Start() {
+        _gun = this.gameObject.AddComponent(typeof(Gun)) as Gun;
+        _gun.ChangeGun("handgun");
+        _gun.bulletPrefab = bulletPrefab;
+    }
+    private void Update() {
+        if (Input.GetKey(KeyCode.Y))
+		{
+			_gun.Shoot();
+		}
+    }
     public static void SetItem(string name)
     {
-        string dictType = "";
+        string before = "";
         if(_gunDictionary.ContainsKey(name))
         {
-            dictType = "gun";
             foreach (var items in _gunDictionary)
             {
-                if(items.Key == name) _gunDictionary[items.Key] = true;
-                else _gunDictionary[items.Key] = false;               
+                if(items.Value) before = items.Key;               
             }
+            _gunDictionary[before] = false;
+            _gunDictionary[name] = true;
+            instance._UpdateGun();
         }
         if(_bulletDictionary.ContainsKey(name))
         {
-            dictType = "bullet";
-            foreach (var items in _bulletDictionary)
+            foreach(var items in _bulletDictionary)
             {
-                if(items.Key == name) _bulletDictionary[items.Key] = true;
-                else _bulletDictionary[items.Key] = false;               
+                if(items.Value) before = items.Key;
             }
+            _bulletDictionary[before] = false;
+            _bulletDictionary[name] = true;
+            instance._UpdateBullet();
         }
-        if(_relicItemDictionary.ContainsKey(name))
+        if(_relicDictionary.ContainsKey(name))
         {
-            dictType = "relic";
-            foreach (var items in _relicItemDictionary)
+            foreach (var items in _relicDictionary)
             {
-                if(items.Key == name) _relicItemDictionary[items.Key] = true;
-                else _relicItemDictionary[items.Key] = false;               
+                if(items.Key == name) _relicDictionary[items.Key] = true;
+                else _relicDictionary[items.Key] = false;               
             }
+            instance._UpdateRelic();
         }
-        _UpdatePlayer(dictType);
     }
 
-    static void _UpdatePlayer(string dictType)
-    {
-        
+    private void _UpdateGun(){
+        string gunname = "";
+        foreach (var item in _gunDictionary)
+        {
+            if (item.Value) gunname = item.Key;
+        }
+        _gun.ChangeGun(gunname);
     }
 
-    public static PlayerManager instance;
-
-    private void Awake() {
-        instance = this;
-        _relicItemDictionary = new Dictionary<string, bool>{
-            {"magneticfiled" ,false},
-            {"nanobot" ,false},
-            {"steelman" ,false},
-            {"destroy",false}
-        };
+    private void _UpdateBullet(){
+        // 플레이어 총일 변경
+        // 하나만 가능
     }
+
+    private void _UpdateRelic(){
+        // 플레이어 유물 변경
+    }
+
+
+    
 }
