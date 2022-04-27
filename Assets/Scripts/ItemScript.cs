@@ -20,6 +20,7 @@ public class ItemScript : MonoBehaviour
                 player.GetComponent<PlayerMovement>().runSpeed = 80f;
                 break;
             default:
+                PlayerManager.SetItem(itemName);
                 // PlayerManager.SetTrueRelicItem(itemName);
                 break;
         }
