@@ -10,8 +10,7 @@ public class PlayerManager : MonoBehaviour
     static Gun _gun;
     static Dictionary<string, bool> _gunDictionary;
     static Dictionary<string, bool> _bulletDictionary;
-    static Dictionary<string, bool> _relicDictionary;
-    public static PlayerManager instance;
+    static Dictionary<string, bool> _relicDictionary;static PlayerManager instance;
     public GameObject bulletPrefab;
     private void Awake() {
         instance = this;

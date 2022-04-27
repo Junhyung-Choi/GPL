@@ -13,7 +13,7 @@ public class ItemScript : MonoBehaviour
 
     void doItemEffect(GameObject player){
         switch (itemName){
-            case "Chick":
+            case "handgun":
                 player.GetComponent<PlayerMovement>().runSpeed = 20f;
                 break;
             case "FastChick":
