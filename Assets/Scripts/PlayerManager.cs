@@ -27,8 +27,8 @@ public class PlayerManager : MonoBehaviour
         _relicDictionary = new Dictionary<string, bool>{
             {"magneticfiled", false},
             {"nanobot", false},
-            {"steelman", false},
-            {"destroy", false}
+            {"iron_charm", false},
+            {"ex_charm", false}
         };
     }
 
