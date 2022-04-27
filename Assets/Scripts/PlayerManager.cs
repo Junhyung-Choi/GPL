@@ -87,12 +87,22 @@ public class PlayerManager : MonoBehaviour
     }
 
     private void _UpdateBullet(){
-        // 플레이어 총일 변경
-        // 하나만 가능
+        string bulletName = "";
+        foreach (var item in _bulletDictionary)
+        {
+            if (item.Value) bulletName = item.Key;
+        }
+        //_bullet.ChangeBullet(bulletName);
     }
 
     private void _UpdateRelic(){
         // 플레이어 유물 변경
+        string relicName = "";
+        foreach (var item in _relicDictionary)
+        {
+            if (item.Value) relicName = item.Key;
+        }
+        //_relic.ChangeBullet(relicName);
     }
 
 
