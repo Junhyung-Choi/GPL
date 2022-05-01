@@ -11,7 +11,7 @@ public class Ally : MonoBehaviour
 
 	private bool facingRight = true;
 
-	public float speed = 5f; 
+	public float speed = 2f; 
 
 	public bool isInvincible = false;
 	private bool isHitted = false;

@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class KillZone : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D col)
+       void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Player")
         {
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+            print("Player");
+            SceneManager.LoadScene("BaseCamp");
         }
         else
         {
