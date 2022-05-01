@@ -16,14 +16,37 @@ public class ItemScript : MonoBehaviour
 
     void doItemEffect(GameObject player){
         switch (itemName){
-            case "Chick":
-                player.GetComponent<PlayerMovement>().runSpeed = 20f;
+            case "handgun":
+                PlayerManager.SetItem("handgun");
                 break;
-            case "FastChick":
-                player.GetComponent<PlayerMovement>().runSpeed = 80f;
+            case "machinegun":
+                PlayerManager.SetItem("machinegun");
+                break;
+            case "shotgun":
+                PlayerManager.SetItem("shotgun");
+                break;
+            case "nor_bullet":
+                PlayerManager.SetItem("nor_bullet");
+                break;
+            case "ap_bullet":
+                PlayerManager.SetItem("ap_bullet");
+                break;
+            case "ex_bullet":
+                PlayerManager.SetItem("ex_bullet");
+                break;
+            case "mf_generator":
+                PlayerManager.SetItem("mf_generator");
+                break;
+            case "nanobot":
+                PlayerManager.SetItem("nanobot");
+                break;
+            case "iron_charm":
+                PlayerManager.SetItem("iron_charm");
+                break;
+            case "ex_charm":
+                PlayerManager.SetItem("ex_charm");
                 break;
             default:
-                PlayerManager.SetItem(itemName);
                 // PlayerManager.SetTrueRelicItem(itemName);
                 break;
         }

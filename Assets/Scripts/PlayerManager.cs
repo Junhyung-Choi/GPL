@@ -10,8 +10,7 @@ public class PlayerManager : MonoBehaviour
     static Gun _gun;
     static Dictionary<string, bool> _gunDictionary;
     static Dictionary<string, bool> _bulletDictionary;
-    static Dictionary<string, bool> _relicDictionary;
-    public static PlayerManager instance;
+    static Dictionary<string, bool> _relicDictionary;static PlayerManager instance;
     public GameObject bulletPrefab;
     private void Awake() {
         instance = this;
@@ -28,8 +27,8 @@ public class PlayerManager : MonoBehaviour
         _relicDictionary = new Dictionary<string, bool>{
             {"magneticfiled", false},
             {"nanobot", false},
-            {"steelman", false},
-            {"destroy", false}
+            {"iron_charm", false},
+            {"ex_charm", false}
         };
     }
 
@@ -88,12 +87,22 @@ public class PlayerManager : MonoBehaviour
     }
 
     private void _UpdateBullet(){
-        // 플레이어 총일 변경
-        // 하나만 가능
+        string bulletName = "";
+        foreach (var item in _bulletDictionary)
+        {
+            if (item.Value) bulletName = item.Key;
+        }
+        //_bullet.ChangeBullet(bulletName);
     }
 
     private void _UpdateRelic(){
         // 플레이어 유물 변경
+        string relicName = "";
+        foreach (var item in _relicDictionary)
+        {
+            if (item.Value) relicName = item.Key;
+        }
+        //_relic.ChangeBullet(relicName);
     }
 
 
