@@ -34,7 +34,7 @@ public class Gun : MonoBehaviour
     {
         Debug.Log("shotgun");
         canShoot = false;
-        _shootBullet_();
+        _shootBulletShotgun_();
         StartCoroutine(ShootCooldown());
     }
 
@@ -62,6 +62,19 @@ public class Gun : MonoBehaviour
         bullet.name = "bullet";
     }
 
+    void _shootBulletShotgun_()
+    {
+        Debug.Log("ShotgunShootingFunction");
+        List<GameObject> bullets = new List<GameObject>();
+        for(int i = 0; i < 10; i++)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f),Quaternion.identity) as GameObject;
+            Vector2 direction = new Vector2(transform.localScale.x,Random.Range(-0.3f,0.3f));
+            bullet.GetComponent<ThrowableWeapon>().direction = direction;
+            bullet.name = "bullet";
+        }
+    }
+
     IEnumerator ShootCooldown()
     {
         yield return new WaitForSeconds(1/rate);
@@ -74,19 +87,19 @@ public class Gun : MonoBehaviour
         {
             case "handgun":
                 type = "handgun";
-                rate = 2;
+                rate = 4;
                 damage = 10;
                 accuracy = 0.9f;
                 break;
             case "machinegun":
                 type = "machinegun";
-                rate = 5;
+                rate = 15;
                 damage = 7;
                 accuracy = 0.7f;
                 break;
             case "shotgun":
                 type = "shotgun";
-                rate = 1;
+                rate = 2;
                 damage = 10;
                 accuracy = 0.8f;
                 break;
