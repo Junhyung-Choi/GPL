@@ -7,8 +7,11 @@ public class ItemScript : MonoBehaviour
     public string itemName;
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        doItemEffect(collision.gameObject);
-        Destroy(this.gameObject);
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            doItemEffect(collision.gameObject);
+            Destroy(this.gameObject);
+        }
     }
 
     void doItemEffect(GameObject player){

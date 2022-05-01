@@ -34,7 +34,7 @@ public class Gun : MonoBehaviour
     {
         Debug.Log("shotgun");
         canShoot = false;
-        _shootBullet_();
+        _shootBulletShotgun_();
         StartCoroutine(ShootCooldown());
     }
 
@@ -60,6 +60,25 @@ public class Gun : MonoBehaviour
         Vector2 direction = new Vector2(transform.localScale.x,0);
         bullet.GetComponent<ThrowableWeapon>().direction = direction;
         bullet.name = "bullet";
+    }
+
+    void _shootBulletShotgun_()
+    {
+        Debug.Log("ShotgunShootingFunction");
+        GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f),Quaternion.identity) as GameObject;
+        Vector2 direction = new Vector2(transform.localScale.x,0);
+        bullet.GetComponent<ThrowableWeapon>().direction = direction;
+        bullet.name = "bullet";
+
+        GameObject bullet2 = Instantiate(bulletPrefab, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f),Quaternion.identity) as GameObject;
+        Vector2 direction2 = new Vector2(transform.localScale.x,0.1f);
+        bullet2.GetComponent<ThrowableWeapon>().direction = direction2;
+        bullet2.name = "bullet";
+        
+        GameObject bullet3 = Instantiate(bulletPrefab, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f),Quaternion.identity) as GameObject;
+        Vector2 direction3 = new Vector2(transform.localScale.x,-0.1f);
+        bullet3.GetComponent<ThrowableWeapon>().direction = direction3;
+        bullet3.name = "bullet";
     }
 
     IEnumerator ShootCooldown()
