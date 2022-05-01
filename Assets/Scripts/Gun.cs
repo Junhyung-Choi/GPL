@@ -65,20 +65,14 @@ public class Gun : MonoBehaviour
     void _shootBulletShotgun_()
     {
         Debug.Log("ShotgunShootingFunction");
-        GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f),Quaternion.identity) as GameObject;
-        Vector2 direction = new Vector2(transform.localScale.x,0);
-        bullet.GetComponent<ThrowableWeapon>().direction = direction;
-        bullet.name = "bullet";
-
-        GameObject bullet2 = Instantiate(bulletPrefab, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f),Quaternion.identity) as GameObject;
-        Vector2 direction2 = new Vector2(transform.localScale.x,0.1f);
-        bullet2.GetComponent<ThrowableWeapon>().direction = direction2;
-        bullet2.name = "bullet";
-        
-        GameObject bullet3 = Instantiate(bulletPrefab, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f),Quaternion.identity) as GameObject;
-        Vector2 direction3 = new Vector2(transform.localScale.x,-0.1f);
-        bullet3.GetComponent<ThrowableWeapon>().direction = direction3;
-        bullet3.name = "bullet";
+        List<GameObject> bullets = new List<GameObject>();
+        for(int i = 0; i < 10; i++)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f),Quaternion.identity) as GameObject;
+            Vector2 direction = new Vector2(transform.localScale.x,Random.Range(-0.3f,0.3f));
+            bullet.GetComponent<ThrowableWeapon>().direction = direction;
+            bullet.name = "bullet";
+        }
     }
 
     IEnumerator ShootCooldown()
@@ -93,19 +87,19 @@ public class Gun : MonoBehaviour
         {
             case "handgun":
                 type = "handgun";
-                rate = 2;
+                rate = 4;
                 damage = 10;
                 accuracy = 0.9f;
                 break;
             case "machinegun":
                 type = "machinegun";
-                rate = 5;
+                rate = 15;
                 damage = 7;
                 accuracy = 0.7f;
                 break;
             case "shotgun":
                 type = "shotgun";
-                rate = 1;
+                rate = 2;
                 damage = 10;
                 accuracy = 0.8f;
                 break;

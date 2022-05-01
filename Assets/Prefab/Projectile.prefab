@@ -136,4 +136,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 400}
   hasHit: 0
-  speed: 15
+  speed: 50
