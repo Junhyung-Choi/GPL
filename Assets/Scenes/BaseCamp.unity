@@ -1099,6 +1099,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114435281327171648, guid: 50936cccdb69523458c1b42052ebafff, type: 3}
+      propertyPath: throwableObject
+      value: 
+      objectReference: {fileID: 5532974359214069763, guid: 37e3ac3790c004d0dbb98292fdbf3996, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50936cccdb69523458c1b42052ebafff, type: 3}
 --- !u!1 &519708364
@@ -3070,7 +3074,7 @@ MonoBehaviour:
   hp: 0
   mp: 0
   gold: 0
-  bulletPrefab: {fileID: 5532974359214069763, guid: 340067e8e5a097546ad175f1d00a6ece, type: 3}
+  bulletPrefab: {fileID: 5532974359214069763, guid: 37e3ac3790c004d0dbb98292fdbf3996, type: 3}
 --- !u!1001 &1267178602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3120,7 +3124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 20290961051787748, guid: d975e66254b08984ab50d4c39dcb947f, type: 3}
       propertyPath: orthographic size
-      value: 6.65625
+      value: 12.34375
       objectReference: {fileID: 0}
     - target: {fileID: 114743086845943066, guid: d975e66254b08984ab50d4c39dcb947f, type: 3}
       propertyPath: Target

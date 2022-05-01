@@ -28,7 +28,7 @@ public class ThrowableWeapon : MonoBehaviour
 			collision.gameObject.SendMessage("ApplyDamage", Mathf.Sign(direction.x) * 2f);
 			Destroy(gameObject);
 		}
-		else if (collision.gameObject.tag != "Player")
+		else if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "Projectile")
 		{
 			Destroy(gameObject);
 		}
