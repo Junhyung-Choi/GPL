@@ -10081,7 +10081,7 @@ MonoBehaviour:
   hp: 0
   mp: 0
   gold: 0
-  bulletPrefab: {fileID: 5532974359214069763, guid: 340067e8e5a097546ad175f1d00a6ece, type: 3}
+  bulletPrefab: {fileID: 5532974359214069763, guid: 37e3ac3790c004d0dbb98292fdbf3996, type: 3}
 --- !u!1 &1257477267
 GameObject:
   m_ObjectHideFlags: 0
