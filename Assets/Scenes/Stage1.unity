@@ -9375,7 +9375,7 @@ MonoBehaviour:
   maxCameraHeight: 400
   targetDimension: 1
   targetCameraWidth: 400
-  targetCameraHeight: 600
+  targetCameraHeight: 300
   pixelPerfect: 1
   pixelSnapMode: 1
   assetsPixelsPerUnit: 32
@@ -18796,7 +18796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 20290961051787748, guid: d975e66254b08984ab50d4c39dcb947f, type: 3}
       propertyPath: orthographic size
-      value: 6.15625
+      value: 4.1302085
       objectReference: {fileID: 0}
     - target: {fileID: 114743086845943066, guid: d975e66254b08984ab50d4c39dcb947f, type: 3}
       propertyPath: Target
