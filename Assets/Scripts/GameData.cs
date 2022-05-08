@@ -7,6 +7,7 @@ using System;
 public class GameData
 {
     public int herolevel = 0;
+    public int heroexp = 0;
     public int offenselevel = 0;
     public Dictionary<string, int> offensetree = new Dictionary<string, int>{{"damage", 0}, {"accuracy", 0}, {"rate", 0}};
     public int defenselevel = 0;

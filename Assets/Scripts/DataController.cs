@@ -58,6 +58,7 @@ public class DataController : MonoBehaviour
             Debug.Log("새로운 파일 생성");
             _gameData = new GameData();
         }
+            Debug.Log(string.Format("LoadData Result => herolevel: {0}, heroexp: {1}, offenselevel: {2}, defenselevel: {3}, utilitylevel: {4}, gunshoplevel: {5}, relicshoplevel: {6}, offensetree: {7}, defensetree: {8}, utilitytree: {9}", gameData.herolevel, gameData.heroexp, gameData.offenselevel, gameData.defenselevel, gameData.utilitylevel, gameData.gunshoplevel, gameData.relicshoplevel, gameData.offensetree, gameData.defensetree, gameData.utilitytree));
     }
 
     public void SaveGameData()
