@@ -10430,7 +10430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 20290961051787748, guid: d975e66254b08984ab50d4c39dcb947f, type: 3}
       propertyPath: orthographic size
-      value: 6.15625
+      value: 9.296875
       objectReference: {fileID: 0}
     - target: {fileID: 114743086845943066, guid: d975e66254b08984ab50d4c39dcb947f, type: 3}
       propertyPath: Target
@@ -12943,6 +12943,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1496356107}
   - component: {fileID: 1496356106}
+  - component: {fileID: 1496356108}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -12963,6 +12964,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   herolevel: 0
+  heroexp: 0
+  offenselevel: 0
+  defenselevel: 0
+  utilitylevel: 0
   gunshoplevel: 0
   relicshoplevel: 0
 --- !u!4 &1496356107
@@ -12979,6 +12984,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1496356108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496356105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ec29d5df35610428944d00652220e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameDataFileName: save.json
+  _gameData:
+    herolevel: 0
+    heroexp: 0
+    offenselevel: 0
+    defenselevel: 0
+    utilitylevel: 0
+    gunshoplevel: 0
+    relicshoplevel: 0
 --- !u!1 &1505758863
 GameObject:
   m_ObjectHideFlags: 0
