@@ -21,7 +21,7 @@ public class ThrowableWeapon : MonoBehaviour
 		GetComponent<Rigidbody2D>().velocity = direction * speed;
 	}
 
-	void OnCollisionEnter2D(Collision2D collision)
+	void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.gameObject.tag == "Enemy")
 		{
@@ -30,7 +30,7 @@ public class ThrowableWeapon : MonoBehaviour
 		}
 		else if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "Projectile")
 		{
-			Destroy(gameObject);
+			// Destroy(gameObject);
 		}
 	}
 }
