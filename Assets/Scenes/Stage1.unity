@@ -9375,7 +9375,7 @@ MonoBehaviour:
   maxCameraHeight: 400
   targetDimension: 1
   targetCameraWidth: 400
-  targetCameraHeight: 300
+  targetCameraHeight: 400
   pixelPerfect: 1
   pixelSnapMode: 1
   assetsPixelsPerUnit: 32
@@ -18796,7 +18796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 20290961051787748, guid: d975e66254b08984ab50d4c39dcb947f, type: 3}
       propertyPath: orthographic size
-      value: 4.1302085
+      value: 6.65625
       objectReference: {fileID: 0}
     - target: {fileID: 114743086845943066, guid: d975e66254b08984ab50d4c39dcb947f, type: 3}
       propertyPath: Target
@@ -20647,6 +20647,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 546920080276365435, guid: d25754f8c03f8497e9111e3538b57fdf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3051690728117173132, guid: 30dd0759ca507de4080012214082a232, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d25754f8c03f8497e9111e3538b57fdf, type: 3}
 --- !u!1 &1394655765
