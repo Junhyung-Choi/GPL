@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown("s")){
+            //this line will be changed
             characterData.heroexp++;
             DataController.Instance._gameData = characterData;
             DataController.Instance.SaveGameData();
