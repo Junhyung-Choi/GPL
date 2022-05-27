@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameData characterData;
+    public GameObject levelupWindow;
     private void Awake() {
         instance = this;
     }
@@ -19,8 +20,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown("s")){
-            //this line will be changed
-            characterData.heroexp++;
             DataController.Instance._gameData = characterData;
             DataController.Instance.SaveGameData();
         }
@@ -28,4 +27,19 @@ public class GameManager : MonoBehaviour
             DataController.Instance.LoadGameData();
         }
     }
+
+    void Levelup(){
+        Debug.Log(string.Format("{0} Level up!", characterData.herolevel));
+    }
+
+    public void Expcontrol(int exppoint){
+        characterData.heroexp += exppoint;
+        if(characterData.heroexp >= 100*characterData.herolevel){
+            characterData.heroexp -= 100*characterData.herolevel;
+            characterData.herolevel++;
+            Levelup();
+        }
+    }
+
+
 }

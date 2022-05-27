@@ -7,7 +7,9 @@ public class Ally : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
-	public float life = 10;
+	//public float life = 10;
+	public float life = 1;
+	public int exppoint = 30;
 
 	private bool facingRight = true;
 
@@ -275,5 +277,7 @@ public class Ally : MonoBehaviour
 		m_Rigidbody2D.velocity = new Vector2(0, m_Rigidbody2D.velocity.y);
 		yield return new WaitForSeconds(1f);
 		Destroy(gameObject);
+		GameManager.instance.Expcontrol(exppoint);
+		Debug.Log(string.Format("{0} get exp!", GameManager.instance.characterData.heroexp));
 	}
 }
