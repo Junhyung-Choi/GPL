@@ -24,10 +24,12 @@ public class HealthBar : MonoBehaviour
     public void DrawBar() {
         CharacterController2D Char = GameObject.Find("DrawCharacter-Changing").GetComponent<CharacterController2D>();
         float hp = Char.life;
+        Debug.Log("drawbarcheck");
+        Debug.Log(info);
         switch(info){
             case "realHealth":
                 slider.value = hp / 10;
-                break;
+                return;
             case "Damage":
                 val = DataController.Instance._gameData.offensetree["damage"];
                 break;
