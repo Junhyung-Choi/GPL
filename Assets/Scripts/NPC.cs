@@ -20,7 +20,7 @@ public class NPC : MonoBehaviour
         
     }
     
-    public void OnTriggerExit2D(Collider2D other) {
+    public virtual void OnTriggerExit2D(Collider2D other) {
         if(text.transform.parent.gameObject.activeSelf && other.CompareTag("Player"))
         {
             text.transform.parent.gameObject.SetActive(false);
