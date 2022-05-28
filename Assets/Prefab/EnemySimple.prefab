@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 10
+  exppoint: 300
   turnLayerMask:
     serializedVersion: 2
     m_Bits: 513

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject levelupWindow;
     GameObject statusWindow;
     int statusPoint;
-    private Vector3 screenCenter;
+    public Transform Canvas;
     private void Awake() {
         instance = this;
     }
@@ -31,13 +31,17 @@ public class GameManager : MonoBehaviour
             DataController.Instance.LoadGameData();
         }
     }
-/*
+
     public void Levelup(){
         Debug.Log(string.Format("{0} Level up!", characterData.herolevel));
         statusWindow = Instantiate(levelupWindow);
         statusPoint = 3;
+        statusWindow.transform.SetParent(Canvas);
+        statusWindow.transform.position = new Vector3(0, 0, -6);
+        
+        //statusWindow.transform.position = new Vector3(Camera.main.pixelWidth/2, Camera.main.pixelHeight/2, -6);
+        
     }
-
     public void LevelUpButtonClick(string type)
     {
         switch(type){
@@ -87,14 +91,13 @@ public class GameManager : MonoBehaviour
             Debug.Log("check");
         }
     }
-*/
+
     public void Expcontrol(int exppoint){
         characterData.heroexp += exppoint;
         if(characterData.heroexp >= 100*characterData.herolevel){
             characterData.heroexp -= 100*characterData.herolevel;
             characterData.herolevel++;
-            LevelUp test = new LevelUp();
-            test.Levelup();
+            Levelup();
         }
     }
 
