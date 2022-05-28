@@ -59,6 +59,7 @@ public class Gun : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f),Quaternion.identity) as GameObject;
         Vector2 direction = new Vector2(transform.localScale.x,0);
         bullet.GetComponent<ThrowableWeapon>().direction = direction;
+        if(transform.localScale.x < 0) bullet.GetComponent<SpriteRenderer>().flipX = true;
         bullet.name = "bullet";
     }
 
