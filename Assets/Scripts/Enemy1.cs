@@ -4,6 +4,8 @@ using System.Collections;
 public class Enemy1 : MonoBehaviour {
 
 	public float life = 10;
+	//exppoint
+	public int exppoint = 300;
 	private bool isPlat;
 	private bool isObstacle;
 	private Transform fallCheck;
@@ -33,14 +35,10 @@ public class Enemy1 : MonoBehaviour {
 		}
 
 		isPlat = Physics2D.OverlapCircle(fallCheck.position, .2f, 1 << LayerMask.NameToLayer("Default"));
-		isObstacle = Physics2D.OverlapCircle(wallCheck.position, .5f, turnLayerMask);
+		isObstacle = Physics2D.OverlapCircle(wallCheck.position, .9f, turnLayerMask);
 
 		if (!isHitted && life > 0 && Mathf.Abs(rb.velocity.y) < 0.5f)
 		{
-			Debug.Log("hi");
-			Debug.Log("isPlat : " + isPlat.ToString());
-			Debug.Log("isObstacle : " + isObstacle.ToString());
-			Debug.Log("isHitted : " + isHitted.ToString());
 			if (isPlat && !isObstacle && !isHitted)
 			{
 				if (facingRight)
@@ -101,6 +99,8 @@ public class Enemy1 : MonoBehaviour {
 
 	IEnumerator DestroyEnemy()
 	{
+		//exppoint gain
+		GameManager.instance.Expcontrol(exppoint);
 		CapsuleCollider2D capsule = GetComponent<CapsuleCollider2D>();
 		capsule.size = new Vector2(1f, 0.25f);
 		capsule.offset = new Vector2(0f, -0.8f);
