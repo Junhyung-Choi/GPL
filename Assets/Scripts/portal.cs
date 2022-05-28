@@ -7,10 +7,23 @@ using UnityEngine.SceneManagement;
 public class portal : NPC
 {
     // Update is called once per frame
+    public bool IsEnterPortal = false;
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)){
+        if(Input.GetKeyDown(KeyCode.Space) && IsEnterPortal){
             SceneManager.LoadScene("Stage");
         }
+    }
+
+    public override void OnTriggerEnter2D(Collider2D other)
+    {
+        base.OnTriggerEnter2D(other);
+        IsEnterPortal = true;
+    }
+
+    public override void OnTriggerExit2D(Collider2D other)
+    {
+        base.OnTriggerExit2D(other);
+        IsEnterPortal = false;
     }
 }
