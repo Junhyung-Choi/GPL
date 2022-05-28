@@ -10,9 +10,10 @@ public class HealthBar : MonoBehaviour
     public string info;
     int val;
 
-    private void Start() {
+    private void Start() { 
         slider = transform.GetComponent<Slider>();
         characterData = DataController.Instance._gameData;
+        Debug.Log(characterData);
     }
     // Start is called before the first frame update
     void Update()
@@ -22,6 +23,7 @@ public class HealthBar : MonoBehaviour
 
     public void DrawBar() {
         CharacterController2D Char = GameObject.Find("DrawCharacter-Changing").GetComponent<CharacterController2D>();
+        Debug.Log(characterData);
         float hp = Char.life;
         switch(info){
             case "realHealth":
