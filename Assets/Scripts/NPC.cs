@@ -6,7 +6,9 @@ public class NPC : MonoBehaviour
 {
     private void OnTriggerStay2D(Collider2D other) {
         if(other.gameObject.transform){
-            Debug.Log("hi");
+            Debug.Log("You can move with (w, a, s, d) or ( ← ↑ ↓ → )");
         }
+
+
     }
 }
