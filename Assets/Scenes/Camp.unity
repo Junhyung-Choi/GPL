@@ -9851,7 +9851,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54f3a06186edb240a2bb8aca78eab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ment: You can attack with (x, c, v, y)
+  ment: "The first stage is Forest. There are strong enemies waiting in front of
+    you, \nso be fully prepared before you challenge."
   text: {fileID: 1629888360}
 --- !u!1 &231749737
 GameObject:
@@ -10041,7 +10042,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54f3a06186edb240a2bb8aca78eab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ment: Complete your mission and save the world!
+  ment: 'The confrontation between Rodale and Ankana reached its peak!
+
+    Complete
+    your mission and save the world!'
   text: {fileID: 1629888360}
 --- !u!1 &398958069
 GameObject:
@@ -11381,7 +11385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &560424696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11857,9 +11861,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227a581ea00ae49eb85763bbc4bbfe14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ment: This is now a forest that has been devastated by a group of people trying
-    to revive past weapons. Be careful, the rest is full of their impure henchmen.
+  ment: 'Press ''Space bar'' to enter the stage.
+
+    Good Luck!'
   text: {fileID: 1629888360}
+  IsEnterPortal: 0
 --- !u!61 &1608888932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11944,18 +11950,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
     m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 1
+    m_MaxSize: 50
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 2
   m_Text: New Text
 --- !u!222 &1629888361
 CanvasRenderer:
@@ -12188,7 +12194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54f3a06186edb240a2bb8aca78eab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ment: "You can move with (w, a, s, d) or ( \u2190 \u2191 \u2193 \u2192 )"
+  ment: "You can move(a, d, \u2190, \u2192) and jump(z)\nalso You can attack with
+    (x, c, v)"
   text: {fileID: 1629888360}
 --- !u!1 &1991079068
 GameObject:
