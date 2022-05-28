@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartButton : MonoBehaviour
+public class MoveScene : MonoBehaviour
 {
     public string SceneToLoad;
     // Start is called before the first frame update
