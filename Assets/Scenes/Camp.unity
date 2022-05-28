@@ -9851,6 +9851,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54f3a06186edb240a2bb8aca78eab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ment: "\uC544\uC790\uCC28"
+  text: {fileID: 1629888360}
 --- !u!1 &231749737
 GameObject:
   m_ObjectHideFlags: 0
@@ -10039,6 +10041,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54f3a06186edb240a2bb8aca78eab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ment: "\uB9C8\uBC14"
+  text: {fileID: 1629888360}
 --- !u!1 &398958069
 GameObject:
   m_ObjectHideFlags: 0
@@ -11377,7 +11381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &560424696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11747,6 +11751,8 @@ GameObject:
   - component: {fileID: 1608888930}
   - component: {fileID: 1608888929}
   - component: {fileID: 1608888928}
+  - component: {fileID: 1608888932}
+  - component: {fileID: 1608888931}
   m_Layer: 0
   m_Name: anim_light1_0
   m_TagString: Untagged
@@ -11838,6 +11844,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1608888931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608888927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227a581ea00ae49eb85763bbc4bbfe14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ment: 
+  text: {fileID: 0}
+  ment: 
+--- !u!61 &1608888932
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608888927}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.089063644, y: -1.1898329}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 2}
+    newSize: {x: 3, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.762459, y: 4.379666}
+  m_EdgeRadius: 0
 --- !u!1 &1629888358
 GameObject:
   m_ObjectHideFlags: 0
@@ -12140,6 +12187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54f3a06186edb240a2bb8aca78eab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ment: "\uAC00\uB098\uB2E4"
+  text: {fileID: 1629888360}
 --- !u!1 &1991079068
 GameObject:
   m_ObjectHideFlags: 0
