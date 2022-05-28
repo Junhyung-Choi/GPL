@@ -5,7 +5,7 @@ public class Enemy1 : MonoBehaviour {
 
 	public float life = 10;
 	//exppoint
-	public int exppoint = 300;
+	public int exppoint = 30;
 	private bool isPlat;
 	private bool isObstacle;
 	private Transform fallCheck;

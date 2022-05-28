@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     public GameData characterData;
     public GameObject levelupWindow;
     GameObject statusWindow;
-    int statusPoint;
+    int statusPoint = 0;
+    int cnt = 0;
     public Transform Canvas;
     private void Awake() {
         instance = this;
@@ -36,10 +37,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void Levelup(){
+        Time.timeScale = 0;
         Debug.Log(string.Format("{0} Level up!", characterData.herolevel));
         if(statusWindow.activeSelf == false) statusWindow.SetActive(true);
-        statusPoint = 3;
-        
     }
     public void LevelUpButtonClick()
     {
@@ -82,23 +82,23 @@ public class GameManager : MonoBehaviour
                 break;
         }
         statusPoint--;
-        Debug.Log(string.Format("LoadData Result => herolevel: {0}, heroexp: {1}, offenselevel: {2}, defenselevel: {3}, utilitylevel: {4}, gunshoplevel: {5}, relicshoplevel: {6}", 
-            characterData.herolevel, characterData.heroexp, characterData.offenselevel, characterData.defenselevel, characterData.utilitylevel, characterData.gunshoplevel, characterData.relicshoplevel));
+        Debug.Log(string.Format("LoadData Result => herolevel: {0}, heroexp: {1}, offenselevel: {2}, defenselevel: {3}, utilitylevel: {4}", 
+            characterData.herolevel, characterData.heroexp, characterData.offenselevel, characterData.defenselevel, characterData.utilitylevel));
         
         if(statusPoint <= 0){
             statusWindow.SetActive(false);
-            Debug.Log("check");
+            Time.timeScale = 1;
         }
     }
 
     public void Expcontrol(int exppoint){
+        Debug.Log(exppoint);
         characterData.heroexp += exppoint;
-        if(characterData.heroexp >= 100*characterData.herolevel){
+        while(characterData.heroexp >= 100*characterData.herolevel){
             characterData.heroexp -= 100*characterData.herolevel;
             characterData.herolevel++;
-            Levelup();
+            statusPoint += 3;
         }
+        if(statusPoint != 0) Levelup();
     }
-
-
 }
