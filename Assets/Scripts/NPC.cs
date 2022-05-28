@@ -10,7 +10,7 @@ public class NPC : MonoBehaviour
 
     public Text text;
     
-    private void OnTriggerEnter2D(Collider2D other) {
+    public virtual void OnTriggerEnter2D(Collider2D other) {
         Debug.Log(text.transform.parent.gameObject.activeSelf);
         if(!text.transform.parent.gameObject.activeSelf && other.CompareTag("Player"))
         {
@@ -20,7 +20,7 @@ public class NPC : MonoBehaviour
         
     }
     
-    private void OnTriggerExit2D(Collider2D other) {
+    public void OnTriggerExit2D(Collider2D other) {
         if(text.transform.parent.gameObject.activeSelf && other.CompareTag("Player"))
         {
             text.transform.parent.gameObject.SetActive(false);
