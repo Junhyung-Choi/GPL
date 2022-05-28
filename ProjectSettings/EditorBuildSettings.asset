@@ -5,15 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/BaseCamp.unity
-    guid: 3d14da1f62e428a4fbf29357bf9b0c6f
-  - enabled: 0
-    path: 
-    guid: 15d8325e1da0a461c8e2e0bbd4f24a4e
-  - enabled: 0
-    path: Assets/Scenes/Stage1.unity
-    guid: 5b59b0043c9ee411c96a791ab0220939
   - enabled: 1
     path: Assets/Scenes/BaseCamp-Jun.unity
     guid: 652a4d2c84141af44958b2fe205d6952
@@ -23,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Camp.unity
     guid: d9d280630eac9fe4bba4b41c04acb60d
+  - enabled: 1
+    path: Assets/Scenes/Stage.unity
+    guid: 2534ccd813766d744990356806d8dcb0
   m_configObjects: {}
