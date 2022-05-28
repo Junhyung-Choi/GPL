@@ -21,45 +21,49 @@ public class HealthBar : MonoBehaviour
     }
 
     public void DrawBar() {
+        CharacterController2D Char = GameObject.Find("DrawCharacter-Changing").GetComponent<CharacterController2D>();
+        float hp = Char.life;
         switch(info){
             case "realHealth":
-            
+                slider.value = hp / 10;
+                break;
             case "Damage":
                 val = characterData.offensetree["damage"];
+                slider.value = val / 30;
                 break;
             case "Accuracy":
                 val = characterData.offensetree["accuracy"];
+                slider.value = val / 30;
                 break;
             case "Rate":
                 val = characterData.offensetree["rate"];
+                slider.value = val / 30;
                 break;
             case "Health":
-                val = characterData.offensetree["health"];
-
+                val = characterData.defensetree["health"];
+                slider.value = val / 30;
                 break;
             case "Armor":
-                val = characterData.offensetree["armor"];
-
+                val = characterData.defensetree["armor"];
+                slider.value = val / 30;
                 break;
             case "Healrate":
-                val = characterData.offensetree["healrate"];
-
+                val = characterData.defensetree["healrate"];
+                slider.value = val / 30;
                 break;
             case "Reward":
-                val = characterData.offensetree["reward"];
-
+                val = characterData.utilitytree["reward"];
+                slider.value = val / 30;
                 break;
             case "Dodge":
-                val = characterData.offensetree["dodge"];
-
+                val = characterData.utilitytree["dodge"];
+                slider.value = val / 30;
                 break;
             case "Critical":
-                val = characterData.offensetree["critical"];
+                val = characterData.utilitytree["critical"];
+                slider.value = val / 30;
                 break;
         }
-        CharacterController2D Char = GameObject.Find("DrawCharacter-Changing").GetComponent<CharacterController2D>();
-        float hp = Char.life;
-        slider.value = hp / 10;
 
     }
 
