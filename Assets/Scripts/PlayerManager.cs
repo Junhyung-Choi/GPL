@@ -38,7 +38,7 @@ public class PlayerManager : MonoBehaviour
         _gun.bulletPrefab = bulletPrefab;
     }
     private void Update() {
-        if (Input.GetKey(KeyCode.Y))
+        if (Input.GetKey(KeyCode.V))
 		{
 			_gun.Shoot();
 		}

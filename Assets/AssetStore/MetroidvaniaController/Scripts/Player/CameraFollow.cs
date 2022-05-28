@@ -36,7 +36,7 @@ public class CameraFollow : MonoBehaviour
 
 	private void Update()
 	{
-		Vector3 newPosition = Target.position;
+		Vector3 newPosition = Target.position + new Vector3(0,4,0);
 		newPosition.z = -10;
 		transform.position = Vector3.Slerp(transform.position, newPosition, FollowSpeed * Time.deltaTime);
 
