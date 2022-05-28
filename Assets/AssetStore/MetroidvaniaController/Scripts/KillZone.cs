@@ -9,7 +9,7 @@ public class KillZone : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("Camp");
             //print("Player");
             //SceneManager.LoadScene("BaseCamp");
         }
