@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject levelupWindow;
     GameObject statusWindow;
     int statusPoint;
-    private Vector3 screenCenter;
+    public Transform Canvas;
     private void Awake() {
         instance = this;
     }
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     {
        DataController.Instance.LoadGameData();
        characterData = DataController.Instance._gameData;
+       statusWindow = levelupWindow;
     }
 
     // Update is called once per frame
@@ -31,49 +33,49 @@ public class GameManager : MonoBehaviour
             DataController.Instance.LoadGameData();
         }
     }
-/*
+
     public void Levelup(){
         Debug.Log(string.Format("{0} Level up!", characterData.herolevel));
-        statusWindow = Instantiate(levelupWindow);
+        if(statusWindow.activeSelf == false) statusWindow.SetActive(true);
         statusPoint = 3;
+        
     }
-
-    public void LevelUpButtonClick(string type)
+    public void LevelUpButtonClick()
     {
-        switch(type){
-            case "DamageUp":
+        switch(EventSystem.current.currentSelectedGameObject.name){
+            case "Damage":
                 characterData.offensetree["damage"]++;
                 characterData.offenselevel++;
                 break;
-            case "AccuracyUp":
+            case "Accuracy":
                 characterData.offensetree["accuracy"]++;
                 characterData.offenselevel++;
                 break;
-            case "RateUp":
+            case "Rate":
                 characterData.offensetree["rate"]++;
                 characterData.offenselevel++;
                 break;
-            case "HealthUp":
+            case "Health":
                 characterData.defensetree["health"]++;
                 characterData.defenselevel++;
                 break;
-            case "ArmorUp":
+            case "Armor":
                 characterData.defensetree["armor"]++;
                 characterData.defenselevel++;
                 break;
-            case "HealrateUp":
+            case "Healrate":
                 characterData.defensetree["healrate"]++;
                 characterData.defenselevel++;
                 break;
-            case "RewardUp":
+            case "Reward":
                 characterData.utilitytree["reward"]++;
                 characterData.utilitylevel++;
                 break;
-            case "DodgeUp":
+            case "Dodge":
                 characterData.utilitytree["dodge"]++;
                 characterData.utilitylevel++;
                 break;
-            case "CriticalUp":
+            case "Critical":
                 characterData.utilitytree["critical"]++;
                 characterData.utilitylevel++;
                 break;
@@ -82,19 +84,18 @@ public class GameManager : MonoBehaviour
         Debug.Log(string.Format("LoadData Result => herolevel: {0}, heroexp: {1}, offenselevel: {2}, defenselevel: {3}, utilitylevel: {4}, gunshoplevel: {5}, relicshoplevel: {6}", 
             characterData.herolevel, characterData.heroexp, characterData.offenselevel, characterData.defenselevel, characterData.utilitylevel, characterData.gunshoplevel, characterData.relicshoplevel));
         
-        if(statusPoint < 0){
-            Destroy(statusWindow);
+        if(statusPoint <= 0){
+            statusWindow.SetActive(false);
             Debug.Log("check");
         }
     }
-*/
+
     public void Expcontrol(int exppoint){
         characterData.heroexp += exppoint;
         if(characterData.heroexp >= 100*characterData.herolevel){
             characterData.heroexp -= 100*characterData.herolevel;
             characterData.herolevel++;
-            LevelUp test = new LevelUp();
-            test.Levelup();
+            Levelup();
         }
     }
 
