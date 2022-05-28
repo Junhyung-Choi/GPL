@@ -9851,7 +9851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54f3a06186edb240a2bb8aca78eab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ment: "\uC544\uC790\uCC28"
+  ment: You can attack with (x, c, v, y)
   text: {fileID: 1629888360}
 --- !u!1 &231749737
 GameObject:
@@ -10041,7 +10041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54f3a06186edb240a2bb8aca78eab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ment: "\uB9C8\uBC14"
+  ment: Complete your mission and save the world!
   text: {fileID: 1629888360}
 --- !u!1 &398958069
 GameObject:
@@ -11381,7 +11381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &560424696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11726,6 +11726,7 @@ MonoBehaviour:
     gunshoplevel: 0
     relicshoplevel: 0
   levelupWindow: {fileID: 0}
+  Canvas: {fileID: 0}
 --- !u!4 &1496356107
 Transform:
   m_ObjectHideFlags: 0
@@ -11856,9 +11857,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227a581ea00ae49eb85763bbc4bbfe14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ment: 
-  text: {fileID: 0}
-  ment: 
+  ment: This is now a forest that has been devastated by a group of people trying
+    to revive past weapons. Be careful, the rest is full of their impure henchmen.
+  text: {fileID: 1629888360}
 --- !u!61 &1608888932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11869,7 +11870,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.089063644, y: -1.1898329}
@@ -11919,8 +11920,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -158, y: 7.1}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -0, y: -1}
+  m_SizeDelta: {x: 480, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1629888360
 MonoBehaviour:
@@ -12187,7 +12188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54f3a06186edb240a2bb8aca78eab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ment: "\uAC00\uB098\uB2E4"
+  ment: "You can move with (w, a, s, d) or ( \u2190 \u2191 \u2193 \u2192 )"
   text: {fileID: 1629888360}
 --- !u!1 &1991079068
 GameObject:
