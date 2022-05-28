@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6065813489433909743}
   - component: {fileID: 6065813489433909740}
   m_Layer: 5
-  m_Name: Healrate
+  m_Name: Dodge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 6065813489692781380}
   - component: {fileID: 6065813489692781381}
   m_Layer: 5
-  m_Name: Health
+  m_Name: Accuracy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -670,7 +670,7 @@ GameObject:
   - component: {fileID: 6065813489722415948}
   - component: {fileID: 6065813489722415949}
   m_Layer: 5
-  m_Name: Reward
+  m_Name: Rate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1028,7 +1028,7 @@ GameObject:
   - component: {fileID: 6065813489790630684}
   - component: {fileID: 6065813489790630685}
   m_Layer: 5
-  m_Name: Accuracy
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1161,7 +1161,7 @@ GameObject:
   - component: {fileID: 6065813489799459618}
   - component: {fileID: 6065813489799459619}
   m_Layer: 5
-  m_Name: Ciritcal
+  m_Name: Critical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1527,7 +1527,7 @@ GameObject:
   - component: {fileID: 6065813490325490129}
   - component: {fileID: 6065813490325490142}
   m_Layer: 5
-  m_Name: Rate
+  m_Name: Reward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2474,7 +2474,7 @@ GameObject:
   - component: {fileID: 6065813491168959941}
   - component: {fileID: 6065813491168959938}
   m_Layer: 5
-  m_Name: Dodge
+  m_Name: Healrate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
