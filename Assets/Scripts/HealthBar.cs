@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Slider slider;
+    public Slider sliderHP;
+    public Slider sliderArmor;
     // Start is called before the first frame update
     void Update()
     {
@@ -15,6 +16,11 @@ public class HealthBar : MonoBehaviour
     public void PlayerHPbar() {
         CharacterController2D Char = GameObject.Find("DrawCharacter-Changing").GetComponent<CharacterController2D>();
         float hp = Char.life;
-        slider.value = hp / 10;
+        sliderHP.value = hp / 10;
+    }
+
+    public void PlayerArmourBar() {
+        int Armor = DataController.Instance._gameData.defensetree["armor"];
+        sliderArmor.value = Armor / 30;
     }
 }
