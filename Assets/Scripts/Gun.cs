@@ -32,7 +32,7 @@ public class Gun : MonoBehaviour
 
     void _shotgunShoot()
     {
-        //Debug.Log("shotgun");
+        Debug.Log("shotgun");
         canShoot = false;
         _shootBulletShotgun_();
         StartCoroutine(ShootCooldown());
@@ -40,7 +40,7 @@ public class Gun : MonoBehaviour
 
     void _handgunShoot()
     {
-        //Debug.Log("handgun");
+        Debug.Log("handgun");
         canShoot = false;
         _shootBullet_();
         StartCoroutine(ShootCooldown());
@@ -48,7 +48,7 @@ public class Gun : MonoBehaviour
 
     void _machinegunShoot()
     {
-        //Debug.Log("machinegun");
+        Debug.Log("machinegun");
         canShoot = false;
         _shootBullet_();
         StartCoroutine(ShootCooldown());
@@ -100,8 +100,7 @@ public class Gun : MonoBehaviour
             case "shotgun":
                 type = "shotgun";
                 rate = 2;
-                //damage = 10;
-                damage = 100;
+                damage = 10;
                 accuracy = 0.8f;
                 break;
         }

@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour {
 
 	public float life = 10;
 	//exppoint
-	public int exppoint = 30;
+	public int exppoint = 300;
 	private bool isPlat;
 	private bool isObstacle;
 	private Transform fallCheck;
@@ -100,7 +100,7 @@ public class Enemy : MonoBehaviour {
 	IEnumerator DestroyEnemy()
 	{
 		//exppoint gain
-		GameManager.instance.characterData.heroexp += exppoint;
+		GameManager.instance.Expcontrol(exppoint);
 		CapsuleCollider2D capsule = GetComponent<CapsuleCollider2D>();
 		capsule.size = new Vector2(1f, 0.25f);
 		capsule.offset = new Vector2(0f, -0.8f);
