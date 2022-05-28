@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
        DataController.Instance.LoadGameData();
        characterData = DataController.Instance._gameData;
        statusWindow = levelupWindow;
+       statusWindow.SetActive(false);
     }
 
     // Update is called once per frame
