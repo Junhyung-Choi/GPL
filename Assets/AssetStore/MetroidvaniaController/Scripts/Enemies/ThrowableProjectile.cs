@@ -18,6 +18,7 @@ public class ThrowableProjectile : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
+		Debug.Log(collision.gameObject.name);
 		if (collision.gameObject.tag == "Player")
 		{
 			collision.gameObject.GetComponent<CharacterController2D>().ApplyDamage(2f, transform.position);

@@ -32,28 +32,30 @@ public class magic : MonoBehaviour
             transform.GetComponent<Animator>().SetBool("IsDead",true);
             StartCoroutine(DestroyEnemy());
         }
-        isPlayerInCircle = Physics2D.OverlapCircle(playerCheck.position, 3f);
         
-        if(player.position.x < transform.position.x){
-            transform.localScale = new Vector3(-1,1,1);
-        } else {
-            transform.localScale = new Vector3(1,1,1);
-        }
-        
-        if(!isHitted && life > 0)
+        if(Vector3.Distance(transform.position,player.transform.position) < 50)
         {
-            if(shootCheck < 0)
-            {
-                shootCheck = shootspeed;
-                Shoot();
+            if(player.position.x < transform.position.x){
+                transform.localScale = new Vector3(-1,1,1);
+            } else {
+                transform.localScale = new Vector3(1,1,1);
             }
-            shootCheck -= Time.deltaTime;
+            if(!isHitted && life > 0)
+            {
+                if(shootCheck < 0)
+                {
+                    shootCheck = shootspeed;
+                    transform.GetComponent<Animator>().SetBool("isShoot",true);
+                    // StartCoroutine(Shoot());
+                }
+                shootCheck -= Time.deltaTime;
+            }
         }
     }
     
-    void Shoot()
+    IEnumerator Shoot()
     {
-        transform.GetComponent<Animator>().SetBool("isShoot",true);
+        yield return new WaitForSeconds(0.2f);
         GameObject b = Instantiate(bullet, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f),Quaternion.identity) as GameObject;
         Destroy(b,3f);
         Vector2 direction = new Vector2(transform.localScale.x,0);
