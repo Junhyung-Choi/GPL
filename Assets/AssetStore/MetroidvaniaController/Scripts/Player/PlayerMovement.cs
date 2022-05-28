@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-		if (Input.GetKeyDown(KeyCode.W))
+		if (Input.GetKeyDown(KeyCode.Z))
 		{
 			jump = true;
 		}
