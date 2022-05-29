@@ -9958,7 +9958,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.18}
+  m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.65, y: 1.7}
   m_Direction: 0
 --- !u!82 &308070248151269853
@@ -10073,7 +10073,6 @@ MonoBehaviour:
   mp: 0
   gold: 0
   bulletPrefab: {fileID: 5532974359214069763, guid: 37e3ac3790c004d0dbb98292fdbf3996, type: 3}
-  audioClip: {fileID: 8300000, guid: 3061c7b9b32d894478e4126ccce25ca3, type: 3}
 --- !u!1 &389383345546843455
 GameObject:
   m_ObjectHideFlags: 0

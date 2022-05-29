@@ -92,9 +92,9 @@ public class magic : MonoBehaviour
     IEnumerator DestroyEnemy()
 	{
 		//exppoint gain
-		GameManager.instance.Expcontrol(exppoint);
 		yield return new WaitForSeconds(3f);
 		Destroy(gameObject);
+		GameManager.instance.Expcontrol(exppoint);
 	}
 
 }

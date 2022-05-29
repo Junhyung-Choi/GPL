@@ -11,7 +11,6 @@ public class NPC : MonoBehaviour
     public Text text;
     
     public virtual void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log(text.transform.parent.gameObject.activeSelf);
         if(!text.transform.parent.gameObject.activeSelf && other.CompareTag("Player"))
         {
             text.text = ment;
