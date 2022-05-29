@@ -35,7 +35,7 @@ public class Enemy1 : MonoBehaviour {
 		}
 
 		isPlat = Physics2D.OverlapCircle(fallCheck.position, .2f, 1 << LayerMask.NameToLayer("Default"));
-		isObstacle = Physics2D.OverlapCircle(wallCheck.position, .9f, turnLayerMask);
+		isObstacle = Physics2D.OverlapCircle(wallCheck.position, 1.2f, turnLayerMask);
 
 		if (!isHitted && life > 0 && Mathf.Abs(rb.velocity.y) < 0.5f)
 		{
@@ -99,8 +99,6 @@ public class Enemy1 : MonoBehaviour {
 
 	IEnumerator DestroyEnemy()
 	{
-		//exppoint gain
-		GameManager.instance.Expcontrol(exppoint);
 		CapsuleCollider2D capsule = GetComponent<CapsuleCollider2D>();
 		capsule.size = new Vector2(1f, 0.25f);
 		capsule.offset = new Vector2(0f, -0.8f);
@@ -109,5 +107,6 @@ public class Enemy1 : MonoBehaviour {
 		rb.velocity = new Vector2(0, rb.velocity.y);
 		yield return new WaitForSeconds(3f);
 		Destroy(gameObject);
+		GameManager.instance.Expcontrol(exppoint);
 	}
 }
