@@ -8,10 +8,11 @@ public class portal : NPC
 {
     // Update is called once per frame
     public bool IsEnterPortal = false;
+    public string nextStage;
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space) && IsEnterPortal){
-            SceneManager.LoadScene("Stage");
+            SceneManager.LoadScene(nextStage);
         }
     }
 

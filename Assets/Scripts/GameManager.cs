@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     public void Levelup(){
         Time.timeScale = 0;
         Debug.Log(string.Format("{0} Level up!", characterData.herolevel));
+        statusWindow.GetComponent<LevelUpWindow>().UpdateLeftStatusPoint(statusPoint);
         if(statusWindow.activeSelf == false) statusWindow.SetActive(true);
     }
     public void LevelUpButtonClick()
@@ -82,6 +83,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
         statusPoint--;
+        statusWindow.GetComponent<LevelUpWindow>().UpdateLeftStatusPoint(statusPoint);
         Debug.Log(string.Format("LoadData Result => herolevel: {0}, heroexp: {1}, offenselevel: {2}, defenselevel: {3}, utilitylevel: {4}", 
             characterData.herolevel, characterData.heroexp, characterData.offenselevel, characterData.defenselevel, characterData.utilitylevel));
         

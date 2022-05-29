@@ -10073,6 +10073,7 @@ MonoBehaviour:
   mp: 0
   gold: 0
   bulletPrefab: {fileID: 5532974359214069763, guid: 37e3ac3790c004d0dbb98292fdbf3996, type: 3}
+  audioClip: {fileID: 8300000, guid: 3061c7b9b32d894478e4126ccce25ca3, type: 3}
 --- !u!1 &389383345546843455
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,7 +32,6 @@ public class Gun : MonoBehaviour
 
     void _shotgunShoot()
     {
-        Debug.Log("shotgun");
         canShoot = false;
         _shootBulletShotgun_();
         StartCoroutine(ShootCooldown());
@@ -40,7 +39,6 @@ public class Gun : MonoBehaviour
 
     void _handgunShoot()
     {
-        Debug.Log("handgun");
         canShoot = false;
         _shootBullet_();
         StartCoroutine(ShootCooldown());
@@ -48,7 +46,6 @@ public class Gun : MonoBehaviour
 
     void _machinegunShoot()
     {
-        Debug.Log("machinegun");
         canShoot = false;
         _shootBullet_();
         StartCoroutine(ShootCooldown());
@@ -60,6 +57,7 @@ public class Gun : MonoBehaviour
         Destroy(bullet,10f);
         Vector2 direction = new Vector2(transform.localScale.x,0);
         bullet.GetComponent<ThrowableWeapon>().direction = direction;
+        bullet.GetComponent<AudioSource>().Play();
         if(transform.localScale.x < 0) bullet.GetComponent<SpriteRenderer>().flipX = true;
         bullet.name = "bullet";
     }
@@ -73,6 +71,8 @@ public class Gun : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f),Quaternion.identity) as GameObject;
             Vector2 direction = new Vector2(transform.localScale.x,Random.Range(-0.3f,0.3f));
             bullet.GetComponent<ThrowableWeapon>().direction = direction;
+            bullet.GetComponent<AudioSource>().Play();
+            if(transform.localScale.x < 0) bullet.GetComponent<SpriteRenderer>().flipX = true;
             bullet.name = "bullet";
         }
     }
