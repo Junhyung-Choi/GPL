@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Transform Canvas;
     private void Awake() {
         instance = this;
+        Cursor.visible = true;
     }
     void Start()
     {
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void Levelup(){
-        Time.timeScale = 0;
+        // Time.timeScale = 0;
         Debug.Log(string.Format("{0} Level up!", characterData.herolevel));
         statusWindow.GetComponent<LevelUpWindow>().UpdateLeftStatusPoint(statusPoint);
         if(statusWindow.activeSelf == false) statusWindow.SetActive(true);

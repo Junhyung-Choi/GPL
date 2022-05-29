@@ -22,7 +22,7 @@ public class CameraFollow : MonoBehaviour
 
 	void Awake()
 	{
-		Cursor.visible = false;
+		// Cursor.visible = false;
 		if (camTransform == null)
 		{
 			camTransform = GetComponent(typeof(Transform)) as Transform;
