@@ -8,7 +8,7 @@ public class HealthBar : MonoBehaviour
     Slider slider;
     GameData characterData;
     public string info;
-    int val;
+    float val;
 
     private void Start() { 
         slider = transform.GetComponent<Slider>();
@@ -24,41 +24,47 @@ public class HealthBar : MonoBehaviour
     public void DrawBar() {
         CharacterController2D Char = GameObject.Find("DrawCharacter-Changing").GetComponent<CharacterController2D>();
         float hp = Char.life;
-        Debug.Log("drawbarcheck");
-        Debug.Log(info);
         switch(info){
             case "realHealth":
                 slider.value = hp / 10;
                 return;
             case "Damage":
-                val = DataController.Instance._gameData.offensetree["damage"];
+                val = DataController.Instance.gameData.offensetree["damage"];
+                slider.value = val / 10;
                 break;
             case "Accuracy":
-                val = DataController.Instance._gameData.offensetree["accuracy"];
+                val = DataController.Instance.gameData.offensetree["accuracy"];
+                slider.value = val / 10;
                 break;
             case "Rate":
-                val = DataController.Instance._gameData.offensetree["rate"];
+                val = DataController.Instance.gameData.offensetree["rate"];
+                slider.value = val / 10;
                 break;
             case "Health":
-                val = DataController.Instance._gameData.defensetree["health"];
-                break;
+                val = DataController.Instance.gameData.defensetree["health"];
+                slider.value = val/10;
+                return;
             case "Armor":
-                val = DataController.Instance._gameData.defensetree["armor"];
+                val = DataController.Instance.gameData.defensetree["armor"];
+                slider.value = val / 10;
                 break;
             case "Healrate":
-                val = DataController.Instance._gameData.defensetree["healrate"];
+                val = DataController.Instance.gameData.defensetree["healrate"];
+                slider.value = val / 10;
                 break;
             case "Reward":
-                val = DataController.Instance._gameData.utilitytree["reward"];
+                val = DataController.Instance.gameData.utilitytree["reward"];
+                slider.value = val / 10;
                 break;
             case "Dodge":
-                val = DataController.Instance._gameData.utilitytree["dodge"];
+                val = DataController.Instance.gameData.utilitytree["dodge"];
+                slider.value = val / 10;
                 break;
             case "Critical":
-                val = DataController.Instance._gameData.utilitytree["critical"];
+                val = DataController.Instance.gameData.utilitytree["critical"];
+                slider.value = val / 10;
                 break;
         }
-        slider.value = val / 30;
     }
 
     // public void PlayerArmourBar() {

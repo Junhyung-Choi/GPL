@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System;
+using Newtonsoft.Json;
 
 public class DataController : MonoBehaviour
 {
@@ -49,23 +50,24 @@ public class DataController : MonoBehaviour
         string filePath = Application.persistentDataPath + GameDataFileName;
         if(File.Exists(filePath))
         {
-            Debug.Log("불러오기 성공!");
             string FromJsonData = File.ReadAllText(filePath);
-            _gameData = JsonUtility.FromJson<GameData>(FromJsonData);
+            _gameData = JsonConvert.DeserializeObject<GameData>(FromJsonData);
+            Debug.Log("불러오기 성공!");
         }
         else
         {
             Debug.Log("새로운 파일 생성");
             _gameData = new GameData();
         }
-            Debug.Log(string.Format("LoadData Result => herolevel: {0}, heroexp: {1}, offenselevel: {2}, defenselevel: {3}, utilitylevel: {4}, gunshoplevel: {5}, relicshoplevel: {6}", gameData.herolevel, gameData.heroexp, gameData.offenselevel, gameData.defenselevel, gameData.utilitylevel, gameData.gunshoplevel, gameData.relicshoplevel));
+        Debug.Log(string.Format("LoadData Result {0}",_gameData));
     }
 
     public void SaveGameData()
     {
-        string ToJsonData = JsonUtility.ToJson(gameData);
+        string ToJsonData = JsonConvert.SerializeObject(gameData);
         string filePath = Application.persistentDataPath + GameDataFileName;
         File.WriteAllText(filePath,ToJsonData);
+        Debug.Log(ToJsonData);
         Debug.Log("저장 완료");
         Debug.Log(filePath);
     }
